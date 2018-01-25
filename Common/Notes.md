@@ -8,6 +8,8 @@ Gems
 ----
 * [rest-client/rest-client](https://github.com/rest-client/rest-client)
 * [json]()
+* []() - command line argument parser
+* []() - config file parser
 
 * [atomicjolt/omniauth-canvas](https://github.com/atomicjolt/omniauth-canvas)
 * [atomicjolt/lms_api](https://github.com/atomicjolt/lms_api)
