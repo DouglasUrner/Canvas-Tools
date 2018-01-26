@@ -16,3 +16,5 @@ Tools with links are under development, bold links are working tools. No link me
 * [EntryTask](https://github.com/DouglasUrner/Canvas-Tools/tree/master/EntryTask) - generate entry task quizes for a set of sections of a class.
 * Page - create an informational page (e.g., class routines).
 * Status - generate a list (web page?) sumarizing assignment status for a section. Could also be used to drive e-mail notifications.
+
+Seating chart web page / annunciator panel driven off of status - see in real time who is getting work in, maybe also who is on site.
