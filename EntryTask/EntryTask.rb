@@ -1,6 +1,7 @@
 require 'rest-client'
 require 'json'
-require 'pp'
+#require 'pp'
+require 'yaml'
 
 require_relative '../Common/boilerplate'
 
@@ -11,9 +12,12 @@ require_relative '../Common/boilerplate'
 
 quiz_api = "#{$options[:base_url]}/api/v1/courses/#{$options[:course_id]}/quizzes"
 
-response = JSON.parse(RestClient.get(quiz_api, {
-    accept: :json,
-    authorization: "Bearer #{$options[:auth_token]}",
-}).to_s)
+response = RestClient.get(
+    quiz_api,
+    {
+        accept: :json,
+        authorization: "Bearer #{$options[:auth_token]}",
+    }
+)
 
-pp response
+pp JSON.parse(response.to_s)

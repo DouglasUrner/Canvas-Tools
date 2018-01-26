@@ -33,4 +33,3 @@ OptionParser.new do |opts|
 
 end.parse!
 
-puts $options
