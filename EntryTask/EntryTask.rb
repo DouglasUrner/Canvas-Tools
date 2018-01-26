@@ -31,9 +31,8 @@ quiz_api = "#{options[:base_url]}/api/v1/courses/#{options[:course_id]}/quizzes"
 response = RestClient::Request.new({
     method: options[:method],
     url: quiz_api,
-    # if options[:method] == :post
-    #   JSON.load(File.open(ARGV[0])),
-    # end
+    # TODO: Payload should be conditional on POST
+    payload: JSON.load(File.open(ARGV[0])),
     headers: {
         accept: :json,
         authorization: "Bearer #{options[:auth_token]}",
