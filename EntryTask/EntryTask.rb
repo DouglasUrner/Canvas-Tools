@@ -1,22 +1,25 @@
 require 'rest-client'
 require 'json'
-#require 'pp'
 require 'yaml'
 
 require_relative '../Common/boilerplate'
 
-# Create a quiz or survey
-# Add questions
-# Publish
-# Loop over sections and set as active
+# TODO: Create a quiz
+# TODO: Add questions
+# TODO: Assign to sections
+# TODO: EntryTask specific command line args
+# TODO: Check result - handle errors
 
 quiz_api = "#{$options[:base_url]}/api/v1/courses/#{$options[:course_id]}/quizzes"
 
-response = RestClient.get(
+response = RestClient.post(
     quiz_api,
+    JSON.load(File.open(ARGV[0])),
     {
-        accept: :json,
         authorization: "Bearer #{$options[:auth_token]}",
+        headers: {
+            accept: :json,
+        }
     }
 )
 

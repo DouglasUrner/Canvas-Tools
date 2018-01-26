@@ -1,0 +1,10 @@
+{"quiz" : {
+  "title" : "New Sample Entry Task",
+  "description" : "",
+  "quiz_type" : "assignment",
+  "points_possible" : 0.0,
+  "due_at" : "2018-01-31T17:41:00Z",
+  "lock_at" : "2018-01-31T17:42:00Z",
+  "unlock_at" : "2018-01-31T17:36:00Z",
+  "published" : true
+}}

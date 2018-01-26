@@ -1,0 +1,51 @@
+quiz:
+  title: Colliders, Triggers, and Tags
+  description:
+
+question:
+    question_name:
+    question_text: Colliders are used to...
+    question_type: multiple_choice_question
+
+    answers:
+      -answer_text: Detect when GameObjects collide.
+       answer_weight: 4
+
+      -answer_text: Initiate collisions between objects.
+       answer_weight: 0
+
+      -answer_text: Run a script if GameObjects collide.
+       answer_weight: 1
+
+      -answer_text: Display animations when GameObjects collide.
+       answer_weight: 1
+
+      -answer_text: Create "landing zones" for player objects.
+       answer_weight: 1
+
+question:
+    question_name:
+    question_text: The Is Trigger check box is used when you want to...
+    question_type: multiple_choice_question
+
+    answers:
+      -answer_text: Start a collision.
+       answer_weight: 0
+
+      -answer_text: Process collision events without invoking physics.
+       answer_weight: 2
+
+      -answer_text: Use collisions to start an action.
+       answer_weight: 1
+
+question:
+    question_name:
+    question_text: To use a Collider a GameObject must have a Rigidbody component attached.
+    question_type: true_false_question
+
+    answers:
+      -answer_text: true
+       answer_weight: 0
+
+      -answer_text: false
+       answer_weight: 1
