@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'rest-client'
 require 'json'
 require 'yaml'
@@ -17,8 +15,15 @@ require_relative '../common/util'
 # TODO: Verbose option - clean up and generalize
 
 options = parse_opts do |opts|
+  # Options specific to this tool go here, common options and their defaults
+  # come from common/util.rb.
+
+  opts.on("-a", "--api API", "the API URL to run") do |api|
+    options[:api] = api
+  end
+
   opts.on("-l", "--list",
-          "retrieve a list of entry tasks for the course") do
+      "retrieve a list of entry tasks for the course") do
     options[:list] = true
   end
 end
@@ -26,39 +31,29 @@ end
 # Verbosity
 pp options
 
-quiz_api = "#{options[:base_url]}/api/v1/courses/#{options[:course_id]}/quizzes"
+base_url = options[:base_url]
+course_id = options[:course_id]
+
+quiz_api = "#{base_url}/api/v1/courses"
 
 # Create the quiz
 
 response = RestClient::Request.new({
     method: options[:method],
-    url: quiz_api,
+    url:    quiz_api,
     # TODO: Payload should be conditional on POST
-    payload: JSON.load(File.open(ARGV[0])),
+    payload: "", # JSON.load(File.open(ARGV[0])),
     headers: {
-        accept: :json,
+        accept:        :json,
         authorization: "Bearer #{options[:auth_token]}",
     }
-}).execute do |response, request, result|
+})::execute do |response, request, result|
   # Verbosity
   pp request
   case response.code
   when 200
-    [ :success, JSON.parse(response.to_str) ]
+    [:success, JSON.parse(response.to_str)]
   else
     fail "#{response.to_str}"
   end
 end
-
-# When creating there should only be one quiz returned, but when listing
-# there will usually be many.
-
-quizzes = response[1]
-
-# Add questions
-
-quizzes.each do |quiz|
-  print "#{quiz['id']} : #{quiz['title']}\n"
-end
-
-# Check if course has sections and assign entry tasks

@@ -11,7 +11,7 @@ def parse_opts(&block)
 
     opts.banner = "Usage: #{File.basename($0)} [options]"
 
-    opts.on("-a", "--auth-token FILE",
+    opts.on("-A", "--auth-token FILE",
             "FILE holding authentication token") do |token_file|
       options[:auth_token] = File.read(token_file).chop
     end
@@ -44,7 +44,7 @@ def parse_opts(&block)
       options[:verbose] = v
     end
 
-    block.call(opts)
+    block.call(options, opts)
 
   end.parse!
 
