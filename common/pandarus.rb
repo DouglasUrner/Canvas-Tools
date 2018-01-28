@@ -25,6 +25,12 @@ client = Pandarus::Client.new(
     prefix: "#{options[:base_url]}/api",
     token: "#{options[:auth_token]}")
 
-result = client.send(options[:api])
+# result = client.send(options[:api])
+
+class Pandarus::Course
+  def assignments(client)
+    client.list_assignments(id)
+  end
+end
 
 binding.irb
