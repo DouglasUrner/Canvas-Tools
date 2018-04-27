@@ -9,12 +9,12 @@ options = parse_opts do |options, opts|
   # Options specific to this tool go here, common options and their defaults
   # come from common/util.rb.
 
-  opts.on("-a", "--api API", "the API URL to run") do |api|
+  opts.on('-a', '--api API', 'the API URL to run') do |api|
     options[:api] = api
   end
 
-  opts.on("-l", "--list",
-      "retrieve a list of entry tasks for the course") do
+  opts.on('-l', '--list',
+          'retrieve a list of entry tasks for the course') do
     options[:list] = true
   end
 end
@@ -22,15 +22,15 @@ end
 token_file = options[:token_file]
 
 client = Pandarus::Client.new(
-    prefix: "#{options[:base_url]}/api",
-    token: "#{options[:auth_token]}")
-
-# result = client.send(options[:api])
+  prefix: "#{options[:base_url]}/api",
+  token:  "#{options[:auth_token]}")
 
 class Pandarus::Course
   def assignments(client)
     client.list_assignments(id)
   end
 end
+
+courses = client.list_your_courses
 
 binding.irb
