@@ -12,3 +12,8 @@
   - Download response data
   
 * FFT setting up classes
+
+# Notes:
+
+* Canvancement
+* Mastery grading
