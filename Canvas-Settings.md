@@ -11,3 +11,7 @@ Settings notes and checklist.
 ### Settings > Course Details > more options
 
 **Hide totals in student grades summary** : default is unchecked - check to hide grades, Canvas is feedback, grades are in SIS.
+
+
+
+Speed Grader - gear - presentation order
