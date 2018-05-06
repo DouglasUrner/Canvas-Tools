@@ -17,3 +17,5 @@
 
 * Canvancement
 * Mastery grading
+* Blueprint
+* Qui
