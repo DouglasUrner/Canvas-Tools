@@ -1,5 +1,7 @@
 # Canvas-Tools
 
+**These are unresolved overlaps between this code and the code in the [Canvas-Tools repository](https://github.com/DouglasUrner/Canvas-Tools). This code is, in general, newer and where current development is happening.**
+
 Tools for automating work with the Canvas LMS (Free for Teachers). General goals:
 
 * Generate Canvas materials from documents under revision control.
