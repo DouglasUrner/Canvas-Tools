@@ -16,4 +16,5 @@ Tools with links are under development, bold links are working tools. No link me
 * CourseGen - generate a course from a git repo.
 * [EntryTask](https://github.com/DouglasUrner/Canvas-Tools/tree/master/EntryTask) - generate entry task quizes for a set of sections of a class.
 * Page - create an informational page (e.g., class routines).
+* [Quiz](Quiz)
 * Status - command line assignment status for a section. Could also be used to drive e-mail notifications.
